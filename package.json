@@ -1,0 +1,22 @@
+{
+  "name": "LayrzParser",
+  "description": "evented parser for the layrz file format",
+  "version": "0.1.0",
+  "author": {
+    "name": "Netspedition"
+  },
+  "dependencies": {
+  },
+  "keywords": [
+    "layrz",
+    "parser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/clonq/layrz-parser"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "readme": "A basic parser for the layrz web image file format"
+}
