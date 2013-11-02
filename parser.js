@@ -34,5 +34,7 @@
 		};
 		return LayrzParser;
 	})();
-	module.exports = LayrzParser;
+	module.exports = function() {
+  		return new LayrzParser();
+	};
 }).call(this);
