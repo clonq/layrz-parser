@@ -14,6 +14,10 @@
 		function LayrzParser() {
 		}
 		LayrzParser.prototype.parse = function(data) {
+			if(!data) {
+				this.emit('no-data');
+				return;
+			}
 			if(data.metadata) this.emit('metadata', data.metadata);
 			if(data.layers) this.emit('layers', data.layers);
 			for(var i=0; i<data.layers.length; i++) {
@@ -25,12 +29,12 @@
 						var object = layer.objects[j];
 						this.emit('object', {_index:j, code:'OBJ'+((j<10)?'0'+(j+1):(j+1)), object:object});
 					}
-					this.emit('objectsdone');
+					this.emit('objects-done');
 				} 
-				this.emit('layerdone');
+				this.emit('layer-done');
 			}
 			this.emit('done');
-			return null;
+			return;
 		};
 		return LayrzParser;
 	})();
